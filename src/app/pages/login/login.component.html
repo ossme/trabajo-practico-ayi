@@ -1,0 +1,5 @@
+<label for="title" >Usuario:</label>
+<input type="text" class="form-control" #userName>
+<label for="title" >Contraseña:</label>
+<input type="password" class="form-control" #userPass>
+<button class="btn btn-primary btn-block btn-login" (click)="login(userName.value,userPass.value)">Login</button>
