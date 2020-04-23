@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="row d-flex justify-content-center">
+        <div class="card-body">
+            <h5 class="card-header">Nombre: {{user.name}}</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span class="negrita">Nombre De Usuario: </span>{{user.username}}</li>
+                <li class="list-group-item"><span class="negrita">Email: </span>{{user.email}}</li>
+                <li class="list-group-item"><span class="negrita">Telefono: </span>{{user.phone}}</li>
+                <div *ngIf="modeDetail">
+                    <li class="list-group-item"><span class="negrita">Sitio: </span>{{user.website}}</li>
+                    <li class="list-group-item"><span class="negrita">Ciudad: </span>{{user.address.city}}</li>
+                    <li class="list-group-item"><span class="negrita">Calle: </span>{{user.address.street}}</li>
+                    <li class="list-group-item"><span class="negrita">Suite: </span>{{user.address.suite}}</li>
+                    <li class="list-group-item"><span class="negrita">Compañia </span>{{user.company.bs}}</li>
+                    <li class="list-group-item"><span class="negrita">Compañia Frase </span>{{user.company.catchPhrase}}</li>
+                    <li class="list-group-item"><span class="negrita">Nombre de la Compañia </span>{{user.company.name}}</li>
+                </div>
+            </ul>
+        </div>
+        
+    </div>
+</div>    

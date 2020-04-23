@@ -1,1 +1,22 @@
-<p>user-list works!</p>
+<h3>Lista de usuarios</h3>
+<a class="btn btn-primary" routerLink="/home/new-todo">New Todo</a>
+<br><br>
+<div class="card-columns m-5" *ngIf="userList.length">
+    <div class="card animated fadeIn" *ngFor="let user of userList">
+        <app-tarjetas [modeDetail]="false" [user]="user" ></app-tarjetas>
+        <div class="col text-center">
+            <a (click)="verDetalles(user.id)" class="btn btn-primary m-2">Ver más</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isLoading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="alert alert-primary" role="alert" *ngIf=" !userList.length">
+    No hay usuarios
+</div>
+
+

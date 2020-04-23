@@ -1,0 +1,8 @@
+<div *ngIf="!isLoading">
+    <div class="row d-flex justify-content-center" >
+    <app-tarjetas [modeDetail]="true" [user]="user"></app-tarjetas>
+    </div>
+</div>
+<div class="alert alert-primary" role="alert" *ngIf="isLoading">
+    Cargando
+</div>
