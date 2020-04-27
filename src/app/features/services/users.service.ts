@@ -15,7 +15,6 @@ export class UserService {
   ) {}
 
   getUsers() {
-    debugger;
     return this.http.get(this.endpoint);
   }
 

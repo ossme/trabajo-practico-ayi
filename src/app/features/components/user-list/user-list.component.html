@@ -1,5 +1,6 @@
-<h3>Lista de usuarios</h3>
-<a class="btn btn-primary" routerLink="/home/new-todo">New Todo</a>
+<h3 class="d-flex justify-content-center">Lista de usuarios</h3>
+<app-modal></app-modal>
+
 <br><br>
 <div class="card-columns m-5" *ngIf="userList.length">
     <div class="card animated fadeIn" *ngFor="let user of userList">
@@ -18,5 +19,3 @@
 <div class="alert alert-primary" role="alert" *ngIf=" !userList.length">
     No hay usuarios
 </div>
-
-

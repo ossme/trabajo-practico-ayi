@@ -5,21 +5,22 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
+import { ModalComponent } from '../shared/components/modal/modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
-  declarations: [UserListComponent, UserDetailComponent,TarjetasComponent, UserFormComponent],
+  declarations: [UserListComponent, UserDetailComponent,TarjetasComponent],
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   exports:[
     UserListComponent,
     UserDetailComponent,
-    UserFormComponent
   ]
 })
 export class FeaturesModule { }

@@ -26,16 +26,15 @@ export class UserListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store.dispatch(fromActionsUser.FetchPending());
     this.store.subscribe( ({ users }) => {
+     // debugger;
       this.isLoading = users.pending;
       if(users.data && users.data.length) {
-
         this.formatTodos(users.data);
       }
     })
   }
 
   formatTodos(users: any) {
-    debugger;
     this.userList = users.map(user => {
       return { 
         id:       user.id,
@@ -43,19 +42,7 @@ export class UserListComponent implements OnInit, OnDestroy {
         username: user.username,
         email:     user.email,
         phone:    user.phone,
-        website:  user.website,
-        company:  {
-          bs:user['company'].bs,
-          catchPhrase:user['company'].catchPhrase,
-          name:user['company'].name
-        },
-        address: {
-          city:user['address'].city,
-          street:user['address'].street,
-          suite:user['address'].suite,
-          zipcode:user['address'].zipcode,
-        },  
-        description: 'This is description',
+        website:  user.website,     
         completed: user.completed
       }
     });

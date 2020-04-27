@@ -29,5 +29,5 @@ export const ClearData = createAction(
 
 export const CreateData = createAction(
     '[USER ACTIONS: CREATE DATA]',
-    props<{texto:string}>()
+    props<{ user: User[] }>()
 )

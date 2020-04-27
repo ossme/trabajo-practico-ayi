@@ -1,5 +1,4 @@
 import { Action, createReducer, on } from '@ngrx/store';
-//import * as 'TodosActions' from './user.actions';
 import * as UserActions from './user.actions';
 
 export interface UserState {
@@ -24,7 +23,7 @@ const userReducer = createReducer(
     }),
     on(UserActions.FetchError, state => ({ ...state, error: true, pending: false })),
     on(UserActions.ClearData, state => (initialState)),
-    on(UserActions.CreateData, (state, { texto }) => ({...state, data:texto}))
+    on(UserActions.CreateData, (state, { user }) => ({...state, data:user}))
   );
   
 export function reducer(state: UserState | undefined, action: Action) {

@@ -1,0 +1,126 @@
+<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar Usuario</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="guardar()">
+                        <div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Nombre</label>
+                                <div class="col-8">
+                                    <input class="form-control"
+                                            type="text"
+                                            placeholder="Nombre"
+                                            formControlName="nombre"
+                                            [class.is-invalid]="nombreNoValido">
+                                    <small *ngIf="nombreNoValido" class="text-danger">
+                                        Ingrese su nombre
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Nombre de usuario</label>
+                                <div class="col-8">
+                                <input class="form-control"
+                                        type="text"
+                                        placeholder="Nombre de usuario"
+                                        formControlName="nombreUsuario"
+                                        [class.is-invalid]="nombreUsuarioNoValido">
+                                    <small *ngIf="nombreUsuarioNoValido" class="text-danger">
+                                        Ingrese su nombre de usuario
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Correo</label>
+                                <div class="col-8">
+                                <input class="form-control"
+                                        type="email"
+                                        placeholder="Correo electrónico"
+                                        formControlName="correo"
+                                        [class.is-invalid]="emailNoValido">
+                                    <small *ngIf="emailNoValido" class="text-danger">
+                                        Ingrese su correo de e-mail
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Telefono</label>
+                                <div class="col-8">
+                        
+                                    <input class="form-control"
+                                        type="text"
+                                        placeholder="Telefono"
+                                        formControlName="telefono"
+                                        [class.is-invalid]="telefonoNoValido">
+                                    <small *ngIf="telefonoNoValido" class="text-danger">
+                                        Ingrese su numero de telefono
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Dirección</label>
+                                <div class="form-row col">
+                                    <div class="col">
+                                        <input class="form-control"
+                                                type="text"
+                                                placeholder="Dirección"
+                                                formControlName="calle">      
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control"
+                                                type="text"
+                                                placeholder="Ciudad"
+                                                formControlName="ciudad">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">Compañia</label>
+                                <div class="form-row col">
+                                    <div class="col">
+                                        <input class="form-control"
+                                        type="text"
+                                        placeholder="Compañia"
+                                        formControlName="compania"
+                                        [class.is-invalid]="companiaNoValido">
+                                        <small *ngIf="companiaNoValido" class="text-danger">
+                                            Ingrese Nombre de la compañia
+                                        </small>     
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control"
+                                                type="text"
+                                                placeholder="Tipo de negocio"
+                                                formControlName="bs">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-2 col-form-label">WebSite</label>
+                                <div class="col-8">
+                                    <input class="form-control"
+                                        type="text"
+                                        placeholder="Website"
+                                        formControlName="website">          
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">                            
+                            <button type="submit" class="btn btn-outline-primary btn-block">Agregar</button>
+                            <button type="button" class="btn btn-outline-secondary btn-block" data-dismiss="modal">Cerrar</button>
+                        </div>
+                   </form>          
+                </div>
+            </div>
+    </div>
+</div>
+
+
